@@ -1,0 +1,54 @@
+<div id="loadingContainer" class="loaderClass">
+	<script>
+		var loadingBar = new ProgressBar.Circle(loadingContainer, {
+			color: '#FFED94',
+			strokeWidth: 4,
+			trailWidth: 0,
+			easing: 'easeInOut',
+			duration: 5000,
+			text: {
+				autoStyleContainer: false,
+		  	},
+			from: { color: '#333', width: 1 },
+			to: { color: '#FFED94', width: 4 },
+			step: function(state, circle) {
+				circle.path.setAttribute('stroke', state.color);
+				circle.path.setAttribute('stroke-width', state.width);
+				var value = Math.round(circle.value() * 100);
+				if (value === 0)
+				{
+					if (!loaderLoaded)
+						circle.setText('');
+					else
+					{
+						circle.setText('');
+						HideLoadingScreen();
+					}
+				} 
+				else if (value >= 100)
+				{
+					if (!loaderLoaded)
+					{
+						circle.setText("BEGIN");
+						loaderButton = document.getElementById("loadingContainer");
+						loaderButton.addEventListener("click", StartAnimate); 
+						LoaderPulse();
+						loaderLoaded = true;
+					}
+				}
+				else
+				{
+					if (!loaderLoaded)
+						circle.setText(value);
+					else
+					{
+						//
+					}
+				}
+
+			}
+		});
+		loadingBar.text.style.fontFamily = 'SoftLine';
+		loadingBar.text.style.fontSize = '4vh';
+	</script>
+</div>
