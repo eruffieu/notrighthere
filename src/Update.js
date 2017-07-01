@@ -10,9 +10,6 @@ function Update()
 
 	composer.render(delta);
 
-	if (loaded)
-	{
-		TWEEN.update();
-		Animate();
-	}
+	TWEEN.update();
+	Animate();
 }
