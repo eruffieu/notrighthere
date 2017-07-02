@@ -82,6 +82,7 @@ var UIPosts;
 var UIMenu;
 var UIMenuAlreadyClicked = false;
 var PostsList = [];
+var loadedPostName;
 
 Init();
 

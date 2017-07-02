@@ -313,6 +313,35 @@ a:active {
 	background-image: -o-linear-gradient(left, #333333, #000000, #333333); 
 }
 
+.postNext {
+	right:0px;
+	top:50%;
+	width:2vw;
+	opacity: 0.3;
+	position: absolute;
+	-webkit-transition:-webkit-transform .25s, opacity .25s, width .25s;
+    -moz-transition:-moz-transform .25s, opacity .25s, width .25s;
+    transition: transform .25s, opacity .25s, width .25s;
+}
+
+.postPrev {
+	left:0px;
+	top:50%;
+	width:2vw;
+	position: absolute;
+	-webkit-transition:-webkit-transform .25s, opacity .25s;
+    -moz-transition:-moz-transform .25s, opacity .25s;
+    transition: transform .25s, opacity .25s;
+}
+
+.postNext:hover {
+	opacity:1;
+}
+
+.postPrev:hover {
+	opacity:1;
+}
+
 .postTitle {
 	text-align:left;
 	z-index: 3;
